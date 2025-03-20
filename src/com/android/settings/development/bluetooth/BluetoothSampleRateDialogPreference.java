@@ -68,10 +68,18 @@ public class BluetoothSampleRateDialogPreference extends BaseBluetoothDialogPref
         for (int i = 0; i < stringArray.length; i++) {
             mRadioButtonStrings.add(stringArray[i]);
         }
+        if (mRadioButtonStrings.size() != mRadioButtonIds.size()) {
+            mRadioButtonStrings.add("176.4 kHz");
+            mRadioButtonStrings.add("192.0 kHz");
+        }
         stringArray = context.getResources().getStringArray(
                 com.android.settingslib.R.array.bluetooth_a2dp_codec_sample_rate_summaries);
         for (int i = 0; i < stringArray.length; i++) {
             mSummaryStrings.add(stringArray[i]);
+        }
+        if (mSummaryStrings.size() != mRadioButtonIds.size()) {
+            mSummaryStrings.add("176.4 kHz");
+            mSummaryStrings.add("192.0 kHz");
         }
     }
 }
